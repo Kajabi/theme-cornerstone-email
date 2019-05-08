@@ -23,6 +23,9 @@
   }
 </style>
 
+<!-- Header hook ====================================================== -->
+{% content_for_header %}
+
 </head>
 <body style="margin:0; padding:0; background-color:{{ settings.color_background }};">
   <center>
@@ -36,3 +39,6 @@
   </center>
 </body>
 </html>
+
+<!-- Javascripts ================================================== -->
+{{ 'core.js' | kajabi_asset_url | script_tag }}

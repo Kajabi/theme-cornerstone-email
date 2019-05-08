@@ -1,0 +1,79 @@
+{% assign spacing = section.settings.spacing | remove: "px" %}
+
+<table width="640" cellpadding="0" cellspacing="0" border="0" class="wrapper background-{{ section.settings.background | color_scheme_class }}" bgcolor="{{ section.settings.background }}" kjb-settings-id="{{ 'background' | settings_id: section: section }}">
+  <tr>
+    <td height="{{ spacing }}" style="font-size:{{ spacing }}px; line-height:{{ spacing }}px;">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center" valign="top">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'text' %}
+            {% include "block_text" %}
+        {% endcase %}
+      {% endfor %}
+    </td>
+  </tr>
+  <tr>
+    <td height="{{ spacing }}" style="font-size:{{ spacing }}px; line-height:{{ spacing }}px;">&nbsp;</td>
+  </tr>
+</table>
+
+{% schema %}
+{
+  "name": "Section",
+  "elements": [
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background",
+      "default": "#fff"
+    },
+    {
+      "type": "radio",
+      "id": "alignment",
+      "label": "Alignment",
+      "default": "center",
+      "options": [
+        {"value": "left", "label": "Left"},
+        {"value": "center", "label": "Centered"},
+        {"value": "right", "label": "Right"}
+      ]
+    },
+    {
+      "type": "text",
+      "id": "spacing",
+      "label": "Spacing",
+      "default": "30",
+      "info": "You may use the format 30px or simply 30"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Text",
+      "elements": [
+        {
+          "type": "header",
+          "content": "Text"
+        },
+        {
+          "type": "rich_text",
+          "id": "body",
+          "label": "Body",
+          "default": "<h1>Profesional Emails</h1><p>From showcasing your products to sharing updates, our emails will help you look like a pro.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Text",
+      "category": "Content",
+      "settings": {
+      }
+    }
+  ]
+
+}
+{% endschema %}
