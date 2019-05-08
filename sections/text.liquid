@@ -1,0 +1,62 @@
+<table width="640" cellpadding="0" cellspacing="0" border="0" class="wrapper background-{{ section.settings.background | color_scheme_class }}" bgcolor="{{ section.settings.background }}" kjb-settings-id="{{ 'background' | settings_id: section: section }}">
+  <tr>
+    <td height="30" style="font-size:30px; line-height:30px;">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center" valign="top">
+
+      <table width="540" cellpadding="0" cellspacing="0" border="0" class="container">
+        <tr>
+          <td align="{{ section.settings.alignment }}" valign="top" kjb-settings-id="{{ 'body' | settings_id: section: section }}">
+            {{ section.settings.body }}
+          </td>
+        </tr>
+      </table>
+
+    </td>
+  </tr>
+  <tr>
+    <td height="30" style="font-size:30px; line-height:30px;">&nbsp;</td>
+  </tr>
+</table>
+
+{% schema %}
+{
+  "name": "Test",
+  "elements": [
+    {
+      "type": "rich_text",
+      "id": "body",
+      "label": "Body",
+      "default": "<h1>Profesional Emails</h1><p>From showcasing your products to sharing updates, our emails will help you look like a pro.</p>"
+    },
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background",
+      "default": "#fff"
+    },
+    {
+      "type": "radio",
+      "id": "alignment",
+      "label": "Alignment",
+      "default": "center",
+      "options": [
+        {"value": "left", "label": "Left"},
+        {"value": "center", "label": "Centered"},
+        {"value": "right", "label": "Right"}
+      ]
+    }
+  ],
+  "blocks": [],
+  "presets": [
+    {
+      "name": "Text",
+      "category": "Content",
+      "settings": {
+      }
+    }
+  ]
+
+}
+{% endschema %}
