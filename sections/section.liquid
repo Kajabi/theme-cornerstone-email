@@ -115,11 +115,50 @@
           ]
         }
       ]
+    },
+    {
+      "type": "image",
+      "name": "Image",
+      "elements": [
+        {
+          "type": "header",
+          "content": "Image"
+        },
+        {
+          "type": "checkbox",
+          "id": "banner",
+          "label": "Use As Banner",
+          "default": "true"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "width",
+          "label": "Width",
+          "default": "400",
+          "info": "You may use the format 400px or simply 400"
+        },
+        {
+          "type": "radio",
+          "id": "alignment",
+          "label": "Alignment",
+          "default": "center",
+          "options": [
+            {"value": "left", "label": "Left"},
+            {"value": "center", "label": "Centered"},
+            {"value": "right", "label": "Right"}
+          ]
+        }
+      ]
     }
   ],
   "presets": [
     {
-      "name": "Text",
+      "name": "Section",
       "category": "Content",
       "settings": {
       }
