@@ -26,7 +26,7 @@
 
 {% schema %}
 {
-  "name": "Text",
+  "name": "Section",
   "elements": [
     {
       "type": "color",
@@ -128,7 +128,7 @@
           "type": "checkbox",
           "id": "banner",
           "label": "Use As Banner",
-          "default": "true"
+          "default": "false"
         },
         {
           "type": "image_picker",
@@ -139,8 +139,8 @@
           "type": "text",
           "id": "width",
           "label": "Width",
-          "default": "400",
-          "info": "You may use the format 400px or simply 400"
+          "default": "540",
+          "info": "You may use the format 540px or simply 540"
         },
         {
           "type": "radio",
@@ -158,10 +158,59 @@
   ],
   "presets": [
     {
-      "name": "Section",
+      "name": "Custom Content",
+      "description": "",
+      "category": "Content",
+      "blocks": []
+    },
+    {
+      "name": "Image",
+      "description": "",
+      "category": "Content",
+      "blocks": [
+        { "type": "image"
+        }
+      ]
+    },
+    {
+      "name": "Image Banner",
+      "description": "",
       "category": "Content",
       "settings": {
-      }
+        "spacing_top": "0",
+        "spacing_bottom": "0"
+      },
+      "blocks": [
+        { "type": "image",
+          "settings": {
+            "banner": "true"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Text",
+      "description": "",
+      "category": "Content",
+      "blocks": [
+        { "type": "text"
+        }
+      ]
+    },
+    {
+      "name": "Text & CTA",
+      "description": "",
+      "category": "Content",
+      "blocks": [
+        { "type": "text",
+          "settings": {
+          }
+        },
+        { "type": "cta",
+          "settings": {
+          }
+        }
+      ]
     }
   ]
 }

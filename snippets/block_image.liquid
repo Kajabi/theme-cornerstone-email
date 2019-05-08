@@ -9,7 +9,7 @@
 <table width="540" cellpadding="0" cellspacing="0" border="0" class="container">
   <tr>
     <td align="{{ block.settings.alignment }}" valign="top">
-      <img src="{{ block.settings.image | image_picker_url: 'placeholder.png' }}" width="{{ width }}" height="" style="margin:{{ spacing }}px 0; padding:0; border:none; display:block;" border="0" alt="" kjb-settings-id="{{ 'image' | settings_id: section: section, block: block }}"/>
+      <img class="img" src="{{ block.settings.image | image_picker_url: 'placeholder.png' }}" width="{{ width }}" height="" style="margin:{{ spacing }}px 0; padding:0; border:none; display:block;" border="0" alt="" kjb-settings-id="{{ 'image' | settings_id: section: section, block: block }}"/>
     </td>
   </tr>
 </table>
