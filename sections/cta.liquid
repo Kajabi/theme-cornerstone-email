@@ -10,7 +10,7 @@
       <table width="540" cellpadding="0" cellspacing="0" border="0" class="container">
         <tr>
           <td align="{{ section.settings.alignment }}" valign="top" kjb-settings-id="{{ 'body' | settings_id: section: section }}">
-            {{ section.settings.body }}
+            <a class="background-{{ section.settings.link_background | color_scheme_class }}" href="#" target="_blank" style="text-decoration:none;padding: 10px 30px;background-color: {{ section.settings.link_background }}">{{ section.settings.link_text }}</a>
           </td>
         </tr>
       </table>
@@ -23,13 +23,25 @@
 
 {% schema %}
 {
-  "name": "Section",
+  "name": "CTA",
   "elements": [
     {
-      "type": "rich_text",
-      "id": "body",
-      "label": "Body",
-      "default": "<h1>Profesional Emails</h1><p>From showcasing your products to sharing updates, our emails will help you look like a pro.</p>"
+      "type": "text",
+      "id": "link_text",
+      "label": "Link Text",
+      "default": "Call To Action"
+    },
+    {
+      "type": "action",
+      "id": "link_action",
+      "label": "Link Action",
+      "default": "http://www.kajabi.com"
+    },
+    {
+      "type": "color",
+      "id": "link_background",
+      "label": "Link Background",
+      "default": "#2e91fc"
     },
     {
       "type": "color",
@@ -68,7 +80,7 @@
   ],
   "presets": [
     {
-      "name": "Text",
+      "name": "CTA",
       "category": "Content",
       "settings": {
       }
