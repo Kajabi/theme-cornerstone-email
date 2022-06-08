@@ -1,0 +1,30 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: theme-cornerstore-email
+  description: |
+    Cornerstone Email is an email theme. It's offered as boilerplate starting point for 3rd party theme developers [here](https://themes.kajabi.com/liquid/getting-started/theme-types). There is no release process for the Cornerstone Email Theme, as it isn't installable directly in Kajabi Admin.
+  tags:
+    - theme
+    - themes
+    - cornerstone
+    - cornerstore-theme
+    - theme-email
+    - email
+    - node
+    - js
+    - javascript
+  annotations:
+    backstage.io/source-location: url:https://github.com/Kajabi/theme-cornerstone-email
+    github.com/project-slug: Kajabi/theme-cornerstone-email
+  links:
+    - title: "Getting Started"
+      url: https://themes.kajabi.com/liquid/getting-started/theme-types
+spec:
+  system: themes
+  type: theme
+  owner: build
+  lifecycle: production
+  dependsOn:
+    - component:kajabi-products-app
+    - component:gulpjs
